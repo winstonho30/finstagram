@@ -9,7 +9,22 @@
     </head>
     
     <body>
-        <%= yield %>
+        <header>
+        <h1><a href="/">Finstagramming</h1></a>
+            <div class="login-info">
+                <% if current_user %>
+                    <%= current_user.username %>
+                    <a href="/logout">Logout</a>
+                <% else %>
+                    <a href="/login">Login</a>
+                    <a href="/signup">Sign up</a>
+                <% end %>
+            </div>
+        </header>
+        
+        <main role="main">
+            <%= yield %>
+        </main>
     </body>
     
     
